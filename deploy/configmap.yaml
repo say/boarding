@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: testflight-configmap
+  namespace: testflight
+data:
+  ITC_APP_ID: com.say.mobile
+  ITC_APP_TESTER_GROUPS: External
+  ITC_USER: apple.developer@say.com
+  FASTLANE_ITC_TEAM_NAME: A Say Inc
+  IMPRINT_URL: https://say.com

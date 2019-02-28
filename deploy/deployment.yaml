@@ -1,0 +1,23 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: testflight
+  name: testflight-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: testflight
+    spec:
+      containers:
+        - name: testflight
+          imagePullPolicy: Always
+          image: 084407240600.dkr.ecr.us-east-1.amazonaws.com/testflight:latest
+          envFrom:
+            - configMapRef:
+                name: testflight-configmap
+            - secretRef:
+                name: testflight-secret
+
